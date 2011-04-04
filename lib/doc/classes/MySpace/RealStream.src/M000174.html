@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>update_subscription (MySpace::RealStream)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File myspace/API/RealStream.rb, line 31</span>
+     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_subscription</span>(<span class="ruby-identifier">subscription_id</span>,<span class="ruby-identifier">type</span>, <span class="ruby-identifier">endpoint</span>, <span class="ruby-identifier">query</span>, <span class="ruby-identifier">metadata</span>, <span class="ruby-identifier">batchsize</span>, <span class="ruby-identifier">rate</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">addlist</span>, <span class="ruby-identifier">removelist</span>)
+       <span class="ruby-identifier">body</span> = <span class="ruby-value str">'{&quot;Subscription&quot; : 
+       {
+       &quot;id&quot; :&quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">subscription_id</span><span class="ruby-operator">+</span> <span class="ruby-value str">'&quot;,
+       &quot;Type&quot; :&quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'&quot;,
+       &quot;Endpoint&quot; : &quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">endpoint</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'&quot;,
+       &quot;Query&quot; :'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">query</span> <span class="ruby-operator">+</span> <span class="ruby-value str">' ,
+       &quot;MetaData&quot; : &quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">metadata</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'&quot;,
+       &quot;BatchSize&quot; : '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">batchsize</span> <span class="ruby-operator">+</span> <span class="ruby-value str">',
+       &quot;Rate&quot; :'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rate</span> <span class="ruby-operator">+</span> <span class="ruby-value str">',
+       &quot;Format&quot; : &quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">format</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'&quot;,
+       &quot;UserList&quot; : {&quot;AddList&quot; : '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">addlist</span> <span class="ruby-operator">+</span> <span class="ruby-value str">',
+       &quot;RemoveList&quot; :'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">removelist</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'}}}'</span>
+      <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">call_myspace_api</span>(<span class="ruby-identifier">:stream_subscription_post</span>,<span class="ruby-identifier">:subscription_id=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">subscription_id</span>,<span class="ruby-identifier">:body=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">body</span>)    
+      
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (MySpace::MySpaceAPI)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File myspace/myspaceapi.rb, line 37</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">oauth_token_key</span>, <span class="ruby-identifier">oauth_token_secret</span>, <span class="ruby-identifier">params</span> = {})
+       <span class="ruby-ivar">@myspacecontext</span> = <span class="ruby-constant">MySpace</span><span class="ruby-operator">::</span><span class="ruby-constant">MySpaceContext</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">oauth_token_key</span>, <span class="ruby-identifier">oauth_token_secret</span>, <span class="ruby-identifier">params</span> )
+       <span class="ruby-ivar">@myspacecontext</span>.<span class="ruby-identifier">http_logger</span>= <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:http_logger</span>]
+       <span class="ruby-ivar">@consumer</span> = <span class="ruby-ivar">@myspacecontext</span>.<span class="ruby-identifier">consumer</span>
+       <span class="ruby-ivar">@request_token</span>= <span class="ruby-ivar">@myspacecontext</span>.<span class="ruby-identifier">request_token</span>
+       <span class="ruby-identifier">openSearch</span> =<span class="ruby-constant">OpenSearch</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@myspacecontext</span>)
+       <span class="ruby-ivar">@restv1</span> =<span class="ruby-constant">RestV1</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@myspacecontext</span>)
+       <span class="ruby-ivar">@restv9</span> =<span class="ruby-constant">RestV9</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@myspacecontext</span>)
+       <span class="ruby-ivar">@poco</span> = <span class="ruby-constant">PortableContact</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@myspacecontext</span>)
+       <span class="ruby-ivar">@realstream</span> = <span class="ruby-constant">RealStream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@myspacecontext</span>)
+       <span class="ruby-ivar">@opensearch</span> =<span class="ruby-constant">OpenSearch</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@myspacecontext</span>)
+       
+   <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

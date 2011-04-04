@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>set_global_appdata (MySpace::RestV1)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File myspace/API/RestV1.rb, line 535</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_global_appdata</span>(<span class="ruby-identifier">params</span> = {})
+      <span class="ruby-identifier">deletes</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">remove_null_values</span>(<span class="ruby-identifier">params</span>)
+      <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">call_myspace_api</span>(<span class="ruby-identifier">:appdata_global_put</span>, <span class="ruby-identifier">:body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">call_myspace_api</span>(<span class="ruby-identifier">:appdata_global_delete</span>, <span class="ruby-identifier">:keys</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">deletes</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">';'</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">deletes</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

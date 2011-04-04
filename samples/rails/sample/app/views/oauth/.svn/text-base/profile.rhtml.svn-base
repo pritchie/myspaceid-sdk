@@ -1,0 +1,87 @@
+<html>
+  <head>
+	<!-- Combo-handled YUI CSS files: -->
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.6.0/build/tabview/assets/skins/sam/tabview.css">
+	  <!-- Combo-handled YUI JS files: -->
+	  <script type="text/javascript" src="http://yui.yahooapis.com/combo?2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&2.6.0/build/imageloader/imageloader-min.js&2.6.0/build/element/element-beta-min.js&2.6.0/build/tabview/tabview-min.js"></script>
+
+	  <style type="text/css">
+		body {
+			background-color:#C9D0D6;
+		}
+		
+		#MySpaceTabs {
+			margin:4em auto;
+			min-width:970px;
+			width:74.6em;
+		}
+	  </style>
+	</head>
+
+	<body class="yui-skin-sam">
+
+	  <% if @profile_data %>  
+	  <div id="MySpaceTabs" class="yui-navset">
+		<ul class="yui-nav">
+		  <li id='profileTab' class="selected"><a href="#tab1"><em>Profile</em></a></li>
+		  <li id='friendsTab'><a href="#tab2"><em>Friends</em></a></li>
+		  <li id='albumsTab'><a href="#tab3"><em>Albums</em></a></li>
+		</ul>            
+		<div class="yui-content">
+		  <div id='profileTabContent'>
+             <p><img src="<%= @profile_data['person']['thumbnailUrl'] %>" /></p> 
+            <p>Profile URL : <a href="<%= @profile_data['person']['profileUrl'] %>"> <%= @profile_data['person']['profileUrl'] %></a><p>
+            <p>Name: <strong> <%= @profile_data['person']['name']['givenName'] %>  <%= @profile_data['person']['name']['familyName'] %></strong> </p> 
+            <p>Gender: <strong> <%= @profile_data['person']['gender'] %> </strong> </p>
+            <p>Age: <strong> <%= @profile_data['person']['age'] %> </strong> </p>
+            <p>Marital Status: <strong> <%= @profile_data['relationshipStatus'] %> </strong> </p>
+            <p>City: <strong> <%= @profile_data['person']['currentLocation']['locality'] %> </strong> </p>
+            <p>Postal Code: <strong> <%= @profile_data['person']['currentLocation']['postalCode']  %> </strong> </p>
+            <p>Region: <strong> <%= @profile_data['person']['currentLocation']['region']  %> </strong> </p>
+            <p>Country: <strong> <%=@profile_data['person']['currentLocation']['country'] %> </strong> </p>
+		  </div>
+		  <div id='friendsTabContent'>
+			<% for friend in @friends_data['entry'] %>
+			<a href='<%=friend['person']['profileUrl']%>'>
+			  <img id='<%=friend['person']['displayName']%>' title='<%=friend['person']['displayName']%>' border='0'/>
+			</a>
+			<% end %>
+		  </div>
+		  <div id='albumsTabContent'>
+           <p>Photos Albums<p>
+			<% for entry in @album_data['entry'] %>
+				<img id='<%=entry['album']['id']%>' title='<%=entry['album']['title']%>' border='0'/>
+				<p>
+					<%=entry['album']['title']%>
+				</p>
+			<% end %>
+		  </div>
+		</div>
+	  </div>
+
+	  <script type="text/javascript">
+		var myTabs = new YAHOO.widget.TabView("MySpaceTabs");
+
+		// Friends Tab Image Loader
+		var tabTwoImageGroup = new YAHOO.util.ImageLoader.group('friendsTab', 'mouseover');
+		var tabThreeImageGroup = new YAHOO.util.ImageLoader.group('albumsTab', 'mouseover');
+
+		<% for friend in @friends_data['entry'] %>
+		tabTwoImageGroup.registerSrcImage('<%= friend['person']['displayName']%>', '<%= friend['person']['thumbnailUrl'] %>');
+		<% end %>
+
+		<% for entry in @album_data['entry'] %>
+			tabThreeImageGroup.registerSrcImage('<%= entry['album']['id']%>', '<%= entry['album']['thumbnailUrl'] %>');
+		<% end %>
+
+
+		tabTwoImageGroup.addTrigger('friendsTab', 'focus');
+		tabTwoImageGroup.name = 'tab_two_group';
+		tabThreeImageGroup.addTrigger('albumsTab', 'focus');
+		tabThreeImageGroup.name = 'tab_three_group';
+
+
+	  </script>
+	  <% end %>
+	</body>
+  </html>

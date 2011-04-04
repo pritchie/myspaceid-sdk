@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/51/trunk/test
+END
+tc_notificationsv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/51/trunk/test/tc_notificationsv9.rb
+END
+tc_appdatav9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/51/trunk/test/tc_appdatav9.rb
+END
+tc_groupsv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/51/trunk/test/tc_groupsv9.rb
+END
+tc_mediaItemsv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/51/trunk/test/tc_mediaItemsv9.rb
+END
+tc_profile.rb
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/51/trunk/test/tc_profile.rb
+END
+tc_albumsv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/51/trunk/test/tc_albumsv9.rb
+END
+tc_peoplev9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/51/trunk/test/tc_peoplev9.rb
+END
+tc_openSearchv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/51/trunk/test/tc_openSearchv9.rb
+END
+myspace_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/51/trunk/test/myspace_test.rb
+END
+ts_alltests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/51/trunk/test/ts_alltests.rb
+END
+tc_statusMoodv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/51/trunk/test/tc_statusMoodv9.rb
+END
+test_data.rb
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/51/trunk/test/test_data.rb
+END
+tc_mediaItemCommentsv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/51/trunk/test/tc_mediaItemCommentsv9.rb
+END
+tc_activitiesv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/51/trunk/test/tc_activitiesv9.rb
+END
+tc_profileCommentsv9.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/51/trunk/test/tc_profileCommentsv9.rb
+END

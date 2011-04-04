@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/51/trunk/samples/rails/sample/public
+END
+dispatch.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/dispatch.cgi
+END
+dispatch.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/dispatch.rb
+END
+doc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/doc
+END
+dispatch.fcgi
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/dispatch.fcgi
+END
+robots.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/robots.txt
+END
+500.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/500.html
+END
+index.html.orig
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/index.html.orig
+END
+404.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/404.html
+END
+422.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/422.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/index.html
+END
+favicon.ico
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/51/trunk/samples/rails/sample/public/favicon.ico
+END

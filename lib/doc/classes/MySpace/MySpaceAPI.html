@@ -1,0 +1,1828 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MySpace::MySpaceAPI</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MySpace::MySpaceAPI</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/myspace/myspaceapi_rb.html">
+                myspace/myspaceapi.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+The <a href="MySpaceAPI.html">MySpaceAPI</a> object provides access to the
+<a href="../MySpace.html">MySpace</a> REST API. use this class to access
+all the functions
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000098">add_appdata</a>&nbsp;&nbsp;
+      <a href="#M000122">add_appdata_global</a>&nbsp;&nbsp;
+      <a href="#M000085">add_photo</a>&nbsp;&nbsp;
+      <a href="#M000117">add_statusmoodcomment</a>&nbsp;&nbsp;
+      <a href="#M000123">add_subscription</a>&nbsp;&nbsp;
+      <a href="#M000086">add_video</a>&nbsp;&nbsp;
+      <a href="#M000096">create_activity</a>&nbsp;&nbsp;
+      <a href="#M000078">create_album</a>&nbsp;&nbsp;
+      <a href="#M000127">delete_allsubscription</a>&nbsp;&nbsp;
+      <a href="#M000100">delete_appdata</a>&nbsp;&nbsp;
+      <a href="#M000125">delete_subscription</a>&nbsp;&nbsp;
+      <a href="#M000067">get_access_token</a>&nbsp;&nbsp;
+      <a href="#M000088">get_activites_supportedfields</a>&nbsp;&nbsp;
+      <a href="#M000090">get_activites_supportedtypes</a>&nbsp;&nbsp;
+      <a href="#M000089">get_activites_supportedverbs</a>&nbsp;&nbsp;
+      <a href="#M000091">get_activities</a>&nbsp;&nbsp;
+      <a href="#M000094">get_activities_by_appid</a>&nbsp;&nbsp;
+      <a href="#M000077">get_album_by_id</a>&nbsp;&nbsp;
+      <a href="#M000075">get_album_fields</a>&nbsp;&nbsp;
+      <a href="#M000076">get_albums</a>&nbsp;&nbsp;
+      <a href="#M000128">get_allsubscription</a>&nbsp;&nbsp;
+      <a href="#M000097">get_appdata</a>&nbsp;&nbsp;
+      <a href="#M000121">get_appdata_global</a>&nbsp;&nbsp;
+      <a href="#M000069">get_authorization_url</a>&nbsp;&nbsp;
+      <a href="#M000092">get_friend_activities</a>&nbsp;&nbsp;
+      <a href="#M000095">get_friendactivities_by_appid</a>&nbsp;&nbsp;
+      <a href="#M000105">get_friends</a>&nbsp;&nbsp;
+      <a href="#M000093">get_friends_activities_atom</a>&nbsp;&nbsp;
+      <a href="#M000110">get_friends_statusmood</a>&nbsp;&nbsp;
+      <a href="#M000113">get_friends_statusmood_by_friendid</a>&nbsp;&nbsp;
+      <a href="#M000112">get_friends_statusmood_history</a>&nbsp;&nbsp;
+      <a href="#M000114">get_friends_statusmood_history_by_friendid</a>&nbsp;&nbsp;
+      <a href="#M000119">get_friendship</a>&nbsp;&nbsp;
+      <a href="#M000101">get_group_supportedfields</a>&nbsp;&nbsp;
+      <a href="#M000102">get_groups</a>&nbsp;&nbsp;
+      <a href="#M000120">get_indicators</a>&nbsp;&nbsp;
+      <a href="#M000080">get_mediaitem_fields</a>&nbsp;&nbsp;
+      <a href="#M000081">get_mediaitems</a>&nbsp;&nbsp;
+      <a href="#M000082">get_mediaitems_by_mediaid</a>&nbsp;&nbsp;
+      <a href="#M000087">get_mediaitems_comments</a>&nbsp;&nbsp;
+      <a href="#M000107">get_moods_supported</a>&nbsp;&nbsp;
+      <a href="#M000106">get_people_by_friendid</a>&nbsp;&nbsp;
+      <a href="#M000103">get_people_supportedfields</a>&nbsp;&nbsp;
+      <a href="#M000104">get_person</a>&nbsp;&nbsp;
+      <a href="#M000074">get_profile_comments</a>&nbsp;&nbsp;
+      <a href="#M000068">get_request_token</a>&nbsp;&nbsp;
+      <a href="#M000111">get_self_statusmood_history</a>&nbsp;&nbsp;
+      <a href="#M000109">get_statusmood</a>&nbsp;&nbsp;
+      <a href="#M000116">get_statusmood_comments</a>&nbsp;&nbsp;
+      <a href="#M000126">get_subscription</a>&nbsp;&nbsp;
+      <a href="#M000108">get_supportedsmoodbyid</a>&nbsp;&nbsp;
+      <a href="#M000070">get_userid</a>&nbsp;&nbsp;
+      <a href="#M000083">get_video_supportedcategories</a>&nbsp;&nbsp;
+      <a href="#M000084">get_videocatergories_by_id</a>&nbsp;&nbsp;
+      <a href="#M000066">new</a>&nbsp;&nbsp;
+      <a href="#M000072">search_images</a>&nbsp;&nbsp;
+      <a href="#M000071">search_people</a>&nbsp;&nbsp;
+      <a href="#M000073">search_videos</a>&nbsp;&nbsp;
+      <a href="#M000118">send_notification</a>&nbsp;&nbsp;
+      <a href="#M000115">set_status</a>&nbsp;&nbsp;
+      <a href="#M000079">update_album</a>&nbsp;&nbsp;
+      <a href="#M000099">update_appdata</a>&nbsp;&nbsp;
+      <a href="#M000124">update_subscription</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">access_token</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">consumer</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">http_logger</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">request_token</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000066" class="method-detail">
+        <a name="M000066"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000066.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000066.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(oauth_token_key, oauth_token_secret, params = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Save the application key/secret(s) and initialize <a
+href="OAuth.html">OAuth</a> code.
+</p>
+<p>
+If optional param +:application_type+ is passed, it must be one of
++MySpace::MySpaceContext::APPLICATION_TYPE_ONSITE+ or
++MySpace::MySpaceContext::APPLICATION_TYPE_OFFSITE+. If the application is
+an onsite application, an access token is not required, since the user must
+separately give your application permission to access their data. If the
+application is an offsite application, it must get an access token from the
+user to access their data.
+</p>
+<p>
+If optional param +:request_token+ is passed +:request_token_secret+ must
+also be passed, and they will be used to create the default argument to
++MySpace#get_access_token+ below. If optional param +:access_token+ is
+passed, +:access_token_secret+ must also be passed, and they will be used
+to create the access token for the REST API calls.
+</p>
+<p>
+If optional param +:site+ is passed, it must be either +:prod+ or +:stage+,
+and <a href="../MySpace.html">MySpace</a> <a href="OAuth.html">OAuth</a>
+calls will be directed to either the production or stage API server
+accordingly.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000098" class="method-detail">
+        <a name="M000098"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000098.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000098.html');return false;">
+          <span class="method-name">add_appdata</span><span class="method-args">(person_id, appId, key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Add a single key to AppData for a single user
+</p>
+<pre>
+      Resource:    http://opensocial.myspace.com/roa/09/appData/@me/@self/
+      Description: Add a single key AppData for a single user
+      Parameter:   @person_id (mandatory parameter) current person id e.g: @me
+                   @app_id (mandatory parameter) refers to applicaiton id for which user wants to enter data
+                   @key (mandatory parameter).refers to the name of key which will be entered
+                   @value (mandatory parameter).refers to the value of key which will be stored
+      Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_AppData
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000122.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000122.html');return false;">
+          <span class="method-name">add_appdata_global</span><span class="method-args">(params = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the global application data.This can be anything that application
+wants
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000085" class="method-detail">
+        <a name="M000085"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000085.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000085.html');return false;">
+          <span class="method-name">add_photo</span><span class="method-args">(person_id,caption,album_id,data)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <pre>
+  OpenSocial v0.9 - Add Photo
+      How to use this Method
+      Make sure you have image file (Say home_16.jpg) available in same folder where your source resides
+</pre>
+<p>
+img=
+open(&#8216;D:\Projects\myspace\rubyFinalSVN\samples\rails\sample\app\controllers\home_16.jpg&#8217;,
+&quot;rb&quot;) {|io| io.read }
+</p>
+<pre>
+      @uploadimage =myspace.add_photo(@user_id, 'caption', '1198371', img)
+     Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000117.html');return false;">
+          <span class="method-name">add_statusmoodcomment</span><span class="method-args">(person_id, status_id,body)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Add StatusMoodComments
+</p>
+<pre>
+    Resource:    #http://opensocial.myspace.com/roa/09/statusmoodcomments/{personId}/@self?statusId={statusId}
+    Description: Set Status mood comments for a particular person
+    Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                 @body (mandatory parameter) body of status comment
+                 @statusid(mandatory paramter) id of parameter for which comment is posted
+    Details:    http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMoodComments
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000123.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000123.html');return false;">
+          <span class="method-name">add_subscription</span><span class="method-args">(type, endpoint, query, metadata, batchsize, rate, format, addlist, removelist)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Real Time Stream
+</p>
+<pre>
+      Resource:     http://api.myspace.com/stream/subscription?
+      Description: Add Subscription
+      Subscription Usage : addSubscriptionV9('All','http://myspace.mycompany.com/handler.ashx','{}','',1,1);
+      Details:    http://wiki.developer.myspace.com/index.php?title=Category:Real_Time_Stream
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000086" class="method-detail">
+        <a name="M000086"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000086.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000086.html');return false;">
+          <span class="method-name">add_video</span><span class="method-args">(person_id,album_id,caption,description,tags,language,data,mscategories,contentType,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Add Video
+</p>
+<pre>
+     How to use this Method
+     Make sure you have video file (Say softboy.avi) available in same folder where your source resides
+     vdo= open('D:\Projects\myspace\rubyFinalSVN\samples\rails\sample\app\controllers\softboy.avi', &quot;rb&quot;) {|io| io.read }
+
+     @uploadVideo = myspace.add_video(@user_id, '@video', 'caption', 'description', 'tags', 'en-US', vdo, '13','video/x-msvideo')
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000096" class="method-detail">
+        <a name="M000096"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000096.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000096.html');return false;">
+          <span class="method-name">create_activity</span><span class="method-args">(person_id,externalId, title, msgBody, templateParams, titleId)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <pre>
+   Create an activity
+   {
+    &quot;externalId&quot;:&quot;myExternalId&quot;,
+    &quot;id&quot;:&quot;myspace.com.activity.-1&quot;,
+    &quot;title&quot;:&quot;osapi test activity at&quot;,
+    &quot;body&quot;:&quot;osapi test activity body&quot;,
+    &quot;templateParams&quot;:{
+        &quot;msParameters&quot;:[
+        {
+            &quot;key&quot;:&quot;friend&quot;,
+            &quot;value&quot;:&quot;6221&quot;
+        },
+        {
+            &quot;key&quot;:&quot;content&quot;,
+            &quot;value&quot;:&quot;hello there this is my template param content&quot;
+        }]
+    },
+    &quot;titleId&quot;:&quot;Template_4&quot;
+</pre>
+<p>
+}
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000078" class="method-detail">
+        <a name="M000078"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000078.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000078.html');return false;">
+          <span class="method-name">create_album</span><span class="method-args">(person_id, caption, location='', privacy='Everyone')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Add Album
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/albums/@me/@self
+   Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                @caption (mandatory parameter)use in place of title.
+                @location (optional parameter)
+                @privacy  (optional parameter) specifies visibility for album,
+                it can be one of 'Everyone', 'FriendsOnly' or 'Me'
+   Description: Creates new album with specified access or with default access of EveryOne (if not
+                specified)
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Albums
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000127.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000127.html');return false;">
+          <span class="method-name">delete_allsubscription</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Real Time Stream
+</p>
+<pre>
+       Resource:   http://api.myspace.com/stream/subscription/{all}?
+       Description:Delete all Subscription
+       Details:    http://wiki.developer.myspace.com/index.php?title=Category:Real_Time_Stream
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000100" class="method-detail">
+        <a name="M000100"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000100.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000100.html');return false;">
+          <span class="method-name">delete_appdata</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Delete single key to AppData for a single user
+</p>
+<pre>
+    Resource:    http://opensocial.myspace.com/roa/09/appData/@me/@self/
+    Description: Delete a single key AppData for a single user
+    Parameter:   @person_id (mandatory parameter) current person id e.g: @me
+                 @app_id (mandatory parameter) refers to applicaiton id for which user wants to delete data
+                 @fields (mandatory parameter).refers to the name of key which will be updated
+                 @value (mandatory parameter).refers to the value of key which will be updated
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_AppData
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000125.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000125.html');return false;">
+          <span class="method-name">delete_subscription</span><span class="method-args">(subscription_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Real Time Stream
+</p>
+<pre>
+       Resource:      http://api.myspace.com/stream/subscription/{subscriptionId}?
+       Description: Delete Subscription
+       Parameter:  subcription_id (mandatory) id of subscrption which user want to delete
+       Details:    http://wiki.developer.myspace.com/index.php?title=Category:Real_Time_Stream
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000067" class="method-detail">
+        <a name="M000067"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000067.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000067.html');return false;">
+          <span class="method-name">get_access_token</span><span class="method-args">(request_token = @request_token)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get an access token once the user has authorized us.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000088" class="method-detail">
+        <a name="M000088"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000088.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000088.html');return false;">
+          <span class="method-name">get_activites_supportedfields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve all activity supported Fields
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/activities/@supportedFields
+   Description: Retrieve all activity supported fields
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000090" class="method-detail">
+        <a name="M000090"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000090.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000090.html');return false;">
+          <span class="method-name">get_activites_supportedtypes</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve all supported Object Types
+</p>
+<pre>
+     Resource:    http://opensocial.myspace.com/roa/09/activities/@supportedObjectTypes
+     Description: Retrieve all activity supported Object Types
+     Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000089" class="method-detail">
+        <a name="M000089"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000089.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000089.html');return false;">
+          <span class="method-name">get_activites_supportedverbs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve all supported verbs
+</p>
+<pre>
+    Resource:    http://opensocial.myspace.com/roa/09/activities/@supportedVerbs
+    Description: Retrieve all activity supported verbs
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000091" class="method-detail">
+        <a name="M000091"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000091.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000091.html');return false;">
+          <span class="method-name">get_activities</span><span class="method-args">(user_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 -Retrieve viewer activities
+</p>
+<pre>
+     Resource:    http://opensocial.myspace.com/roa/09/activities/{personId}/{selector}
+     Description: Return all activities available for viewer
+     Parameter:   @person_id (mandatory parameter) current person id e.g: @me
+                  @fields (optional parameter).------------------------------
+     Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Activities
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000094" class="method-detail">
+        <a name="M000094"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000094.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000094.html');return false;">
+          <span class="method-name">get_activities_by_appid</span><span class="method-args">(person_id,app_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve viewer activities by appID
+</p>
+<pre>
+        Resource:    http://opensocial.myspace.com/roa/09/activities/{personId}/{selector}
+        Description: Return all activities available for viewer for an appID specified in parameter
+        Parameter:   @app_id (mandatory parameter) refers to applicaiton id for which user wants to check activities
+                     @fields (optional parameter).------------------------------
+        Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Activities
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000077" class="method-detail">
+        <a name="M000077"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000077.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000077.html');return false;">
+          <span class="method-name">get_album_by_id</span><span class="method-args">(person_id, album_id, fields='@all')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve Album by ID
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/albums/@me/@self/%s
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Albums
+   Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                @album_id (mandatory parameter)pass the  album id  which you want to get in response.
+                @fields  (optional) return fields which you need in response
+   Description: get_albumbyidv9 return a specific album based on passed alumb_id
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000075" class="method-detail">
+        <a name="M000075"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000075.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000075.html');return false;">
+          <span class="method-name">get_album_fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve all Album supported Fields
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/albums/@supportedFields
+   Description: Return all fields available for albums
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Albums
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000076" class="method-detail">
+        <a name="M000076"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000076.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000076.html');return false;">
+          <span class="method-name">get_albums</span><span class="method-args">(person_id, params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve Albums
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/albums/@me/@self/%s
+   Description: Retrieve Albums return all albums available for user,
+   Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                @fields (optional parameter) fields which you want to filter in response
+                @startindex (optional parameter)  startIndex must be in the form of startIndex = (count * i) + 1,
+                 where i is any non-negative integer,
+                e.g. if count = 5, startIndex can be 1, 6, 11, 16, etc.
+                @count (optional parameter) total number of records
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Albums
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000128.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000128.html');return false;">
+          <span class="method-name">get_allsubscription</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Real Time Stream
+</p>
+<pre>
+      Resource:   http://api.myspace.com/stream/subscription/{subscriptionId}?
+      Description:Get all Subscption
+      Details:    http://wiki.developer.myspace.com/index.php?title=Category:Real_Time_Stream
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000097" class="method-detail">
+        <a name="M000097"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000097.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000097.html');return false;">
+          <span class="method-name">get_appdata</span><span class="method-args">(person_id, selector, app_id, field)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve all/Single key in AppData for a single user
+</p>
+<pre>
+        Resource:    http://opensocial.myspace.com/roa/09/appdata/{personId}/{selector}/{appId}
+        Description: Retrieve all AppData for a single user
+        Parameter:   @person_id (mandatory parameter) current person id e.g: @me
+                     @app_id (mandatory parameter) refers to applicaiton id for which user wants to get data
+                     @fields (optional parameter).The fields correspond to keys in the AppData. One uses fields
+                      to only retrieve specific keys. If the request omits fields, all AppData per user will be returned.
+        Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_AppData
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000121.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000121.html');return false;">
+          <span class="method-name">get_appdata_global</span><span class="method-args">(*keys)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets the global application data. This can be anything the application
+wants. If you pass <tt>keys</tt>, only return data corresponding to the
+passed keys.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000069" class="method-detail">
+        <a name="M000069"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000069.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000069.html');return false;">
+          <span class="method-name">get_authorization_url</span><span class="method-args">(request_token, callback_url)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000092" class="method-detail">
+        <a name="M000092"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000092.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000092.html');return false;">
+          <span class="method-name">get_friend_activities</span><span class="method-args">(user_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve friend activities.
+</p>
+<pre>
+      Resource:    http://opensocial.myspace.com/roa/09/activities/{personId}/{selector}
+      Description: Return all activities available for friend.
+      Parameter:   @person_id (mandatory parameter) current person id e.g: @me
+                   @fields (optional parameter).specific fields
+      Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Activities
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000095" class="method-detail">
+        <a name="M000095"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000095.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000095.html');return false;">
+          <span class="method-name">get_friendactivities_by_appid</span><span class="method-args">(person_id,app_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve friend activities by appID
+</p>
+<pre>
+      Resource:    http://opensocial.myspace.com/roa/09/activities/{personId}/{selector}
+      Description: Return all activities available for friend for an appID specified in parameter
+      Parameter:   @person_id (mandatory parameter) current person id e.g: @me
+                   @app_id (mandatory parameter) refers to applicaiton id for which user wants to check activities
+                   @fields (optional parameter).specific fields
+      Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Activities
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000105" class="method-detail">
+        <a name="M000105"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000105.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000105.html');return false;">
+          <span class="method-name">get_friends</span><span class="method-args">(person_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 People- get my friends Data
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/people/{personId}/{selector}/{friendId}
+   Description: get my friends Data
+   Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                @fields     (optional parameter)
+                @filterby   (optional parameter) some valid values : {topFriends | toponlineFriends | hasApp etc }
+                @filterop   (optional parameter) some valid values : {contains | equals etc }
+                @filtervalue(optional parameter) some valid values : {true | false | specific value etc }
+                @format     (optional parameter) Determines the format of the response. We currently support json and xml
+                @startindex (optional parameter)  startIndex must be in the form of startIndex = (count * i) + 1,
+                where i is any non-negative integer,
+                e.g. if count = 5, startIndex can be 1, 6, 11, 16, etc.
+                @count (optional parameter) total number of records
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_People
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000093" class="method-detail">
+        <a name="M000093"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000093.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000093.html');return false;">
+          <span class="method-name">get_friends_activities_atom</span><span class="method-args">(user_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The function will get all of the activites of a user friend, provided that
+the current user and application have privilages to access it
+</p>
+<pre>
+   @param int|string $userId
+   @param unknown_type $culture
+   @param mixed $datetime A better limit on the activities returned is datetime because it allows the consumer to query
+                          deltas and only processed what has changed. Pass a date that is less than 60 days ago as the maximum and default number of days back you can query is 60.
+                          If you query more than that the system will only go as far back as 60. Example of querystring parameters is: datetime=06/21/2009
+
+   @param string $activityTypes PhotoTagged|PhotoAdd|SongUpload|ProfileSongAdd|BlogAdd|ForumPosted|ForumTopicReply|VideoAdd|ProfileVideoUpdate|FavoriteVideoAdd|FriendAdd|JoinedGroup|FriendCategoryAdd|PersonalBandShowUpdate|EventPosting|EventAttending|ApplicationAdd
+   @param int    $pageSize      You can use this parameter to specify the number of atom entries returned in the stream
+   @param bool   $composite      Set this parameter to true t
+   @param bool   $composite      Set this parameter to true to get one atom entry for all activities of the same type on the same day. If the objects of the activities go into targets then they will be grouped by target. Ex: Max uploaded 5 photos into the album Medieval Times.
+   @param bool   $extensions    Pipe delimited list of options syndicating the activity stream. Name fo the query string parameter is &quot;extensions&quot; Example: &amp;extensions=actor|subject
+
+   @return SimpleXML a SimpleXML representation of an Activities ATOM Feed
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000110.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000110.html');return false;">
+          <span class="method-name">get_friends_statusmood</span><span class="method-args">(person_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Retrieve a status &amp; mood for all Friends
+</p>
+<pre>
+        Resource:    http://opensocial.myspace.com/roa/09/statusmood/{personId}/{selector}
+        Description: Retrieve a status &amp; mood for all Friends
+        Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                     @filterby (optional parameter) some valid values : {topFriends | toponlineFriends | hasApp etc }
+                     @filterop (optional parameter) some valid values : {contains | equals etc }
+                     @filtervalue (optional parameter)  some valid values : {true | false | specific value etc }
+                     @includeself (optional parameter) current user should included or not
+                     @culture (optional parameter) culture for which you wan to select value
+                     @fields (optional parameter) specific fields
+        Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000113.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000113.html');return false;">
+          <span class="method-name">get_friends_statusmood_by_friendid</span><span class="method-args">(person_id, friend_id, params = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Retrieve a status &amp; mood history for a particular
+friend
+</p>
+<pre>
+        Resource:    http://opensocial.myspace.com/roa/09/statusmood/{personId}/{selector}/history
+        Description: Retrieve a status &amp; mood for a friend
+        Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                     @friend_id (mandatory parameter) id of friend for which you want to retreive data
+                     @filterby (optional parameter) some valid values : {topFriends | toponlineFriends | hasApp etc }
+                     @filterop (optional parameter) some valid values : {contains | equals etc }
+                     @filtervalue (optional parameter)  some valid values : {true | false | specific value etc }
+                     @includeself (optional parameter) current user should included or not
+                     @culture (optional parameter) culture for which you wan to select value
+                     @fields (optional parameter) specific fields
+        Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000112.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000112.html');return false;">
+          <span class="method-name">get_friends_statusmood_history</span><span class="method-args">(person_id, params = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Retrieve a status &amp; mood history for friends
+</p>
+<pre>
+        Resource:    http://opensocial.myspace.com/roa/09/statusmood/{personId}/{selector}/history
+        Description: Retrieve a status &amp; mood history for friends
+        Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                     @filterby (optional parameter) some valid values : {topFriends | toponlineFriends | hasApp etc }
+                     @filterop (optional parameter) some valid values : {contains | equals etc }
+                     @filtervalue (optional parameter)  some valid values : {true | false | specific value etc }
+                     @includeself (optional parameter) current user should included or not
+                     @culture (optional parameter) culture for which you wan to select value
+                     @fields (optional parameter) specific fields
+        Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000114.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000114.html');return false;">
+          <span class="method-name">get_friends_statusmood_history_by_friendid</span><span class="method-args">(person_id, friend_id, params = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Retrieve a status &amp; mood history for a particular
+friend
+</p>
+<pre>
+    Resource:    http://opensocial.myspace.com/roa/09/statusmood/{personId}/{selector}/history
+    Description: Retrieve a status &amp; mood for a friend
+    Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                 @friend_id (mandatory parameter) id of friend for which you want to retreive data
+                 @filterby (optional parameter) some valid values : {topFriends | toponlineFriends | hasApp etc }
+                 @filterop (optional parameter) some valid values : {contains | equals etc }
+                 @filtervalue (optional parameter)  some valid values : {true | false | specific value etc }
+                 @includeself (optional parameter) current user should included or not
+                 @culture (optional parameter) culture for which you wan to select value
+                 @fields (optional parameter) specific fields
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000119.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000119.html');return false;">
+          <span class="method-name">get_friendship</span><span class="method-args">(user_id,*friend_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tests whether user <tt>user_id</tt> is friends with one or more other
+users:
+</p>
+<pre>
+  {&quot;friendship&quot;=&gt;
+    [{&quot;areFriends&quot;=&gt;true, &quot;friendId&quot;=&gt;6221},
+     {&quot;areFriends&quot;=&gt;false, &quot;friendId&quot;=&gt;12341234},
+     {&quot;areFriends&quot;=&gt;true, &quot;friendId&quot;=&gt;456073223}],
+    &quot;user&quot;=&gt;
+    {&quot;name&quot;=&gt;&quot;Bob&quot;,
+      &quot;uri&quot;=&gt;&quot;http://api.myspace.com/v1/users/456073223&quot;,
+      &quot;webUri&quot;=&gt;&quot;http://www.myspace.com/bobvontestacount&quot;,
+      &quot;largeImage&quot;=&gt;
+      &quot;http://c1.ac-images.myspacecdn.com/images02/45/l_f820313641924f0f90004932c8bc310c.jpg&quot;,
+      &quot;userType&quot;=&gt;&quot;RegularUser&quot;,
+      &quot;userId&quot;=&gt;456073223,
+      &quot;image&quot;=&gt;
+      &quot;http://c1.ac-images.myspacecdn.com/images02/45/s_f820313641924f0f90004932c8bc310c.jpg&quot;}}
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000101" class="method-detail">
+        <a name="M000101"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000101.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000101.html');return false;">
+          <span class="method-name">get_group_supportedfields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Groups- Retrieve all supported fields
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/groups/@supportedFields
+   Description: Retrieve all group supported fields
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Groups
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000102" class="method-detail">
+        <a name="M000102"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000102.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000102.html');return false;">
+          <span class="method-name">get_groups</span><span class="method-args">(person_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve all groups for current user
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/groups/@me
+   Description: Retrieve all groups for current user fields
+   Parameter:   @person_id (mandatory parameter) current person id e.g: @me
+                @startindex (optional parameter)  startIndex must be in the form of startIndex = (count * i) + 1,
+                where i is any non-negative integer,
+                e.g. if count = 5, startIndex can be 1, 6, 11, 16, etc.
+                @count (optional parameter) total number of records
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Groups
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000120.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000120.html');return false;">
+          <span class="method-name">get_indicators</span><span class="method-args">(user_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000080" class="method-detail">
+        <a name="M000080"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000080.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000080.html');return false;">
+          <span class="method-name">get_mediaitem_fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Retrieve all media item supported Fields
+</p>
+<pre>
+    Resource:    http://opensocial.myspace.com/roa/09/mediaItems/@supportedFields
+    Description: get the supported mediaitem fields
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000081" class="method-detail">
+        <a name="M000081"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000081.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000081.html');return false;">
+          <span class="method-name">get_mediaitems</span><span class="method-args">(person_id, album_id, params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Get Media Items
+</p>
+<pre>
+    Resource:    http://opensocial.myspace.com/roa/09/mediaItems/{personId}/{selector}/{albumId}/{mediaItemId}
+    Description: Retrieve items from an Album based on album_id
+    Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                 @album_id (mandatory parameter)Id of album for which you want to get data
+                 @startindex (optional parameter)  startIndex must be in the form of startIndex = (count * i) + 1,
+                 where i is any non-negative integer,
+                 e.g. if count = 5, startIndex can be 1, 6, 11, 16, etc.
+                 @count (optional parameter) total number of records
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000082" class="method-detail">
+        <a name="M000082"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000082.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000082.html');return false;">
+          <span class="method-name">get_mediaitems_by_mediaid</span><span class="method-args">(person_id,album_id, media_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Get Media Items by ID
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/mediaItems/{personId}/{selector}/{albumId}/{mediaItemId}
+   Description: Retrieve a single MediaItem from an Album based on album_id and media_id
+   Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                @album_id (mandatory parameter)Id of album for which you want to get data
+                @media_id (mandatory parameter)Id of media items for which you want to get data
+                @startindex (optional parameter)  startIndex must be in the form of startIndex = (count * i) + 1,
+                where i is any non-negative integer,
+                e.g. if count = 5, startIndex can be 1, 6, 11, 16, etc.
+                @count (optional parameter) total number of records
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000087" class="method-detail">
+        <a name="M000087"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000087.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000087.html');return false;">
+          <span class="method-name">get_mediaitems_comments</span><span class="method-args">(person_id, album_id, media_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 MediaItemComments
+</p>
+<pre>
+  Resource:    http://opensocial.myspace.com/roa/09/mediaitemcomments/{personId}/@self/{albumId}/{mediaItemId}
+  Description: Get comments associated with media item, based on album_id and media_id
+  Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+               @album_id (mandatory parameter)Id of album which you want to update
+               @media_id (mandatory parameter)Id of media items for which you want to get data
+  Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_MediaItemComments
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000107.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000107.html');return false;">
+          <span class="method-name">get_moods_supported</span><span class="method-args">(person_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 StatusMood - Retrieve all supported moods
+</p>
+<pre>
+       Resource:    http://opensocial.myspace.com/roa/09/statusmood/@me/@supportedMood
+       Description: Retrieve all supported moods
+       Parameters:  person_id (mandatory parameter) current person id e.g: @me
+       Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000106" class="method-detail">
+        <a name="M000106"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000106.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000106.html');return false;">
+          <span class="method-name">get_people_by_friendid</span><span class="method-args">(person_id, friend_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 People- get a perticular friend Data
+</p>
+<pre>
+       Resource:    http://opensocial.myspace.com/roa/09/people/{personId}/{selector}/{friendId}
+       Description: get a perticular friend Data
+       Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                    @fields     (optional parameter) specific fields
+                    @filterby   (optional parameter) some valid values : {topFriends | toponlineFriends | hasApp etc }
+                    @filterop   (optional parameter) some valid values : {contains | equals etc }
+                    @filtervalue(optional parameter) some valid values : {true | false | specific value etc }
+                    @format     (optional parameter) Determines the format of the response. We currently support json and xml
+                    @startindex (optional parameter)  startIndex must be in the form of startIndex = (count * i) + 1,
+                    where i is any non-negative integer,
+                    e.g. if count = 5, startIndex can be 1, 6, 11, 16, etc.
+                    @count (optional parameter) total number of records
+       Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_People
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000103" class="method-detail">
+        <a name="M000103"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000103.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000103.html');return false;">
+          <span class="method-name">get_people_supportedfields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 People- Retrieve all supported fields
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/people/@supportedFields
+   Description: Retrieve all people supported fields
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_People
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000104" class="method-detail">
+        <a name="M000104"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000104.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000104.html');return false;">
+          <span class="method-name">get_person</span><span class="method-args">(person_id,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 People- Get my profile data
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/people/@me/@self
+   Description: Get my profile data
+   Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                @fields     (optional parameter) specific fields
+                @filterby   (optional parameter) some valid values : {topFriends | toponlineFriends | hasApp etc }
+                @filterop   (optional parameter) some valid values : {contains | equals etc }
+                @filtervalue(optional parameter) some valid values : {true | false | specific value etc }
+                @format     (optional parameter)  Determines the format of the response. We currently support json and xml
+                @startindex (optional parameter)  startIndex must be in the form of startIndex = (count * i) + 1,
+                where i is any non-negative integer,
+                e.g. if count = 5, startIndex can be 1, 6, 11, 16, etc.
+                @count (optional parameter) total number of records
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_People
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000074" class="method-detail">
+        <a name="M000074"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000074.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000074.html');return false;">
+          <span class="method-name">get_profile_comments</span><span class="method-args">(person_id, params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Get Profile Comments
+</p>
+<pre>
+    Resource:    http://opensocial.myspace.com/roa/09/profilecomments/@me/@self
+    Description: Return all comments available for user profile.
+    Parameter:   @person_id (mandatory parameter) current person id
+                 @fields (optional parameter). By default, the id of the comment author will be added
+                 to the result set, give the fields=author to get more information on the author
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_ProfileComments
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000068" class="method-detail">
+        <a name="M000068"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000068.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000068.html');return false;">
+          <span class="method-name">get_request_token</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get an unauthorized request token from <a
+href="../MySpace.html">MySpace</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000111.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000111.html');return false;">
+          <span class="method-name">get_self_statusmood_history</span><span class="method-args">(person_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Retrieve a status &amp; mood history for user
+</p>
+<pre>
+    Resource:    http://opensocial.myspace.com/roa/09/statusmood/{personId}/{selector}/history
+    Description: Retrieve a status &amp; mood history for user
+    Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                 @fields (optional parameter) specific fields
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000109.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000109.html');return false;">
+          <span class="method-name">get_statusmood</span><span class="method-args">(person_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Retrieve a status &amp; mood for user
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/statusmood/{personId}/{selector}
+   Description: Retrieve a status &amp; mood for user
+   Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000116.html');return false;">
+          <span class="method-name">get_statusmood_comments</span><span class="method-args">(person_id,status_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Get StatusMoodComments
+</p>
+<pre>
+    Resource:    http://opensocial.myspace.com/roa/09/statusmoodcomments/{personId}/@self
+    Description: Get all Status mood comments
+    Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                 @statusid id of moodstatus for which comment is posted
+    Details:    http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMoodComments
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000126.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000126.html');return false;">
+          <span class="method-name">get_subscription</span><span class="method-args">(subscription_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Real Time Stream
+</p>
+<pre>
+      Resource:      http://api.myspace.com/stream/subscription/{subscriptionId}?
+      Description: Get Subscption
+      Parameter:  subcription_id (mandatory) id of subscrption which user want to Get
+      Details:    http://wiki.developer.myspace.com/index.php?title=Category:Real_Time_Stream
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000108.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000108.html');return false;">
+          <span class="method-name">get_supportedsmoodbyid</span><span class="method-args">(person_id,moodId)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 StatusMood - Retrieve all supported moods by id
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/statusmood/{personId}/@supportedMood/{moodId}
+   Description: Retrieve all supported moods by id
+   Parameters:  person_id current person id e.g: @me
+                mood_id   id of mood which you want to retrive
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000070" class="method-detail">
+        <a name="M000070"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000070.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000070.html');return false;">
+          <span class="method-name">get_userid</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000083" class="method-detail">
+        <a name="M000083"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000083.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000083.html');return false;">
+          <span class="method-name">get_video_supportedcategories</span><span class="method-args">(person_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Get Media Items by Category
+</p>
+<pre>
+  Resource:    #http://opensocial.myspace.com/roa/09/mediaitems/{personId}/@videos/@supportedcategories
+  Description: Retrieve supported categories
+  Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+  Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000084" class="method-detail">
+        <a name="M000084"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000084.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000084.html');return false;">
+          <span class="method-name">get_videocatergories_by_id</span><span class="method-args">(person_id,cat_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Get Media Items by Category ID
+</p>
+<pre>
+  Resource:    #http://opensocial.myspace.com/roa/09/mediaitems/{personId}/@videos/@supportedcategories/{categoryId}
+  Description: Retrieve MediaItem(Video) from supported cat
+  Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+  Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_0.9_MediaItems
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000072" class="method-detail">
+        <a name="M000072"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000072.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000072.html');return false;">
+          <span class="method-name">search_images</span><span class="method-args">(searchterm,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Open Search
+</p>
+<pre>
+  Resource: http://api.myspace.com/opensearch/images?
+  Details:  http://wiki.developer.myspace.com/index.php?title=Open_Search
+  Description: Get Image Search
+  @param mixed   $searchTerms   (mandatory parameter)search keywords
+  @param integer $startIndex    Indicates the index of the first item to retrieve from the query set
+  @param integer $count            total number of records
+  @param string  $searchBy      which field the search should go through. Default is all the fields (yomi is only available to ja-jp culture) [ex. searchBy=name or searchBy=displayname or searchBy=email or searchBy=yomi]
+  @param string  $culture         the culture context of the search; for instance japan is ja-jp; default is en-us [ex. culture=en-us]
+  @param string  $sortBy        Ways to sort the images; when excluded sortBy is all [ex. sortBy=popular or sortBy=recent]
+  @param string  $sortOrder     Order of the image sorting which can be descending (default) or ascending [ex. sortOrder=asc]
+  @return object of python object representing the JSON in which the list of search
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000071" class="method-detail">
+        <a name="M000071"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000071.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000071.html');return false;">
+          <span class="method-name">search_people</span><span class="method-args">(searchterm,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Open Search
+</p>
+<pre>
+ Resource: http://api.myspace.com/opensearch/people?
+ Details:  http://wiki.developer.myspace.com/index.php?title=Open_Search
+ Description: Get People Search
+ @param mixed   $searchTerms   (mandatory parameter)search keywords
+ @param integer $startIndex    Indicates the index of the first item to retrieve from the query set
+ @param integer $count            total number of records
+ @param string  $searchBy      which field the search should go through. Default is all the fields (yomi is only available to ja-jp culture) [ex. searchBy=name or searchBy=displayname or searchBy=email or searchBy=yomi]
+ @param string  $gender        the gender to filter on; default is no preference or both [ex. gender=m or gender=f]
+ @param bool    $hasPhoto      filter for those who only has photo; default is either [ex. hasPhoto=on]
+ @param integer $minAge        minimum age to start the search (same filter as site search) [ex. minAge=18]
+ @param integer $maxAge        maximum age to end the search with (same filter as site search) [ex. maxAge=68]
+ @param string  $location      the location field such as city state and country to search for [ex. location=US]
+ @param integer $distance      distance away from location to return results; default is miles; depending on culture passed in it can be kilometers [ex. distance=25]
+ @param mixed   $latitude         geo latitude to search; combination with longitude required when used [ex. latitude=1] (does not work with location field)
+ @param mixed   $longitude     geo longtitude to search; combination with latitude is required when used [ex. longitude=1] (does not work with location field)
+ @param string  $culture         the culture context of the search; for instance japan is ja-jp; default is en-us [ex. culture=en-us]
+ @param string  $countryCode   countryCode to search with [ex. countryCode=CA] (this is similar to culture=en-CA)
+ @return object of python object representing the JSON in which the list of search
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000073" class="method-detail">
+        <a name="M000073"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000073.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000073.html');return false;">
+          <span class="method-name">search_videos</span><span class="method-args">(searchterm,params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Open Search
+</p>
+<pre>
+  Resource: http://api.myspace.com/opensearch/video?
+  Details:  http://wiki.developer.myspace.com/index.php?title=Open_Search
+  Description: Get Video Search
+  @param mixed   $searchTerms   (mandatory parameter)search keywords
+  @param integer $startIndex    Indicates the index of the first item to retrieve from the query set
+  @param integer $count            total number of records
+  @param string  $searchBy      which field the search should go through. Default is all the fields (yomi is only available to ja-jp culture) [ex. searchBy=name or searchBy=displayname or searchBy=email or searchBy=yomi]
+  @param string  $culture         the culture context of the search; for instance japan is ja-jp; default is en-us [ex. culture=en-us]
+  @param string  $tag           Determine if this is a tag search [ex. tag=1]
+  @param string  $videomode     Determine if this is a tag search [ex. videoMode=1 (music videos) or videoMode=2 (official)]
+  @return object of python object representing the JSON in which the list of search
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000118.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000118.html');return false;">
+          <span class="method-name">send_notification</span><span class="method-args">(msMediaItemUri, recipientIds, canvasUrl, content)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Notifications
+</p>
+<pre>
+    send_notification Usage:
+
+    ms = MySpace(ckeynsecret.CONSUMER_KEY, ckeynsecret.CONSUMER_SECRET)
+      templateparam ='[{&quot;key&quot;:&quot;content&quot;,&quot;value&quot;:&quot;Test notification content from python sdk&quot;}, #                                {&quot;key&quot;:&quot;button0_surface&quot;,&quot;value&quot;:&quot;canvas&quot;}, #                                {&quot;key&quot;:&quot;button0_label&quot;,&quot;value&quot;:&quot;Go To App Canvas&quot;}, #                                {&quot;key&quot;:&quot;button1_label&quot;,&quot;value&quot;:&quot;Go To App Profile&quot;}]'
+          notification_data = ms.send_notification(person_id=&quot;333220680&quot;, recipientids=&quot;333220680&quot;, templateparams=templateparam, mediaitems='http://opensocial.myspace.com/roa/09/mediaitemcomments/333220680/@self')
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000115.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000115.html');return false;">
+          <span class="method-name">set_status</span><span class="method-args">(person_id,latitude, longitude, moodName, status)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 Update Status Mood
+</p>
+<pre>
+      Resource:    http://opensocial.myspace.com/roa/09/statusmood/@me/@self
+      Description: Update/Set Status Mood
+      Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                  Possible values for option parameters
+                  {
+                  &quot;currentLocation&quot;:{
+                      &quot;latitude&quot;:&quot;47.604832&quot;,
+                      &quot;longitude&quot;:&quot;-122.337549&quot;
+                  },
+                  &quot;moodName&quot;:&quot;excited&quot;,
+                  &quot;status&quot;:&quot;Working on Ruby SDK&quot;
+                  }
+                  Example :
+                  set_statusv9(person_id=&quot;@me&quot;,latitude='47',longitude='122',moodname='excited',status='Pythond SDK Completed')
+      Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_StatusMood
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000079" class="method-detail">
+        <a name="M000079"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000079.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000079.html');return false;">
+          <span class="method-name">update_album</span><span class="method-args">(person_id,album_id, caption, location='', privacy='Everyone')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Update existing Album
+</p>
+<pre>
+    Resource:   http://opensocial.myspace.com/roa/09/albums/@me/@self/%s
+    Parameters:  @person_id (mandatory parameter) current person id e.g: @me
+                 @album_id (mandatory parameter)Id of album which you want to update
+                 @caption (Optional parameter)use in place of title.
+                 @location (optional parameter)
+                 @privacy  (optional parameter) specifies visibility for album,
+                 it can be one of 'Everyone', 'FriendsOnly' or 'Me'
+    Description: Update album with new values of parameters specified
+    Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_Albums
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000099" class="method-detail">
+        <a name="M000099"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000099.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000099.html');return false;">
+          <span class="method-name">update_appdata</span><span class="method-args">(person_id, appId, key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+OpenSocial v0.9 - Update a single key to AppData for a single user
+</p>
+<pre>
+   Resource:    http://opensocial.myspace.com/roa/09/appData/@me/@self/
+   Description: Add a single key AppData for a single user
+   Parameter:   @person_id (mandatory parameter) current person id e.g: @me
+                @app_id (mandatory parameter) refers to applicaiton id for which user wants to update data
+                @key (mandatory parameter).refers to the name of key which will be updated
+                @value (mandatory parameter).refers to the value of key which will be updated
+   Details:     http://wiki.developer.myspace.com/index.php?title=OpenSocial_v0.9_AppData
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
+
+        <div class="method-heading">
+          <a href="MySpaceAPI.src/M000124.html" target="Code" class="method-signature"
+            onclick="popupCode('MySpaceAPI.src/M000124.html');return false;">
+          <span class="method-name">update_subscription</span><span class="method-args">(subscription_id,type, endpoint, query, metadata, batchsize, rate, format, addlist, removelist)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Real Time Stream
+</p>
+<pre>
+      Resource:     http://api.myspace.com/stream/subscription/{subscriptionId}?
+      Description: Update subscription
+      Update Subscription Usage : updateSubscriptionV9('1234', 'All','http://myspace.mycompany.com/handler.ashx','{}','',1,1);
+      Details:    http://wiki.developer.myspace.com/index.php?title=Category:Real_Time_Stream
+</pre>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/51/trunk/samples/rails/sample/test/functional
+END
+openid_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/51/trunk/samples/rails/sample/test/functional/openid_controller_test.rb
+END
+user_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/51/trunk/samples/rails/sample/test/functional/user_controller_test.rb
+END
+oauth_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/51/trunk/samples/rails/sample/test/functional/oauth_controller_test.rb
+END
