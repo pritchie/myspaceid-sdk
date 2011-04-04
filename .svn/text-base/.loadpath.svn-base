@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<loadpath>
-	<pathentry path="GEM_LIB/ruby-openid-2.1.7/lib" type="var"/>
-	<pathentry path="GEM_LIB/actionpack-2.2.2/lib" type="var"/>
-	<pathentry path="D:/Projects/myspace/rubyFinalSVN/lib" type="lib"/>
-	<pathentry path="D:/Projects/myspace/ruby-myspace-id-sdk/rubyFinalSVN/lib" type="lib"/>
-</loadpath>
