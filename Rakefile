@@ -1,17 +1,17 @@
 require 'rake/testtask'
 require 'rake/packagetask'
 # require 'rake/rdoctask'
-require 'hoe'
+#require 'hoe'
 
 $LOAD_PATH.push('lib')
 require 'myspace.rb'
 
-Hoe.new('myspaceid-sdk', MySpace::VERSION) do |p|
-  p.author = 'MySpaceID Development Team'
-  p.email = 'developerrelations@myspace-inc.com'
-  p.rubyforge_name = 'myspaceid-sdk'
-  p.extra_deps = ['ruby-openid', 'oauth', 'json']
-end
+# Hoe.new('myspaceid-sdk', MySpace::VERSION) do |p|
+#   p.author = 'MySpaceID Development Team'
+#   p.email = 'developerrelations@myspace-inc.com'
+#   p.rubyforge_name = 'myspaceid-sdk'
+#   p.extra_deps = ['ruby-openid', 'oauth', 'json']
+#end
 
 desc "Generate manifest file programmatically"
 task :generate_manifest do
