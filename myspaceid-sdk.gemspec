@@ -1,9 +1,5 @@
- require 'rubygems'
- require 'rake/packagetask'
-
- PKG_FILES = FileList[
-                      "README", "lib/**/*", "test/**/*", "samples/**/*"
-                     ].exclude(/db\/cstore\/(associations|nonces)|log\//)
+require 'rubygems'
+require 'rake'
 
 Gem::Specification.new do |s|
    s.name = %q{myspaceid-sdk}
@@ -16,7 +12,9 @@ Gem::Specification.new do |s|
    s.homepage = %q{http://developer.myspace.com/}
    s.has_rdoc = true
    s.description = %q{The MySpaceID SDK provides a library for implementing MySpaceID and accessing MySpace users account data.}
-   s.files = PKG_FILES
+   s.files = FileList[
+                      "README", "lib/**/*", "test/**/*", "samples/**/*"
+                     ].exclude(/db\/cstore\/(associations|nonces)|log\//)
    s.rubyforge_project = %q{myspaceid-sdk}
    s.add_dependency('ruby-openid', '>= 2.1.8')
    s.add_dependency('oauth', '>= 0.4.4')
