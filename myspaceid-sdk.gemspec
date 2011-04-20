@@ -3,7 +3,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
    s.name = %q{myspaceid-sdk}
-   s.version = "0.1.12.1"
+   s.version = "0.1.12.2"
    s.date = %q{2011-04-04}
    s.authors = ["Patrick Ritchie"]
    s.email = %q{}
